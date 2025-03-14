@@ -1,0 +1,121 @@
+[gd_scene load_steps=13 format=3 uid="uid://dcm3jrctfyxj6"]
+
+[ext_resource type="Script" path="res://Scripts/button.gd" id="1_g6r8o"]
+[ext_resource type="Script" path="res://Scripts/button_salir.gd" id="2_5kngq"]
+[ext_resource type="Texture2D" uid="uid://cjsht1tie27ch" path="res://Assets/3/Walk.png" id="3_3qy8e"]
+[ext_resource type="Texture2D" uid="uid://ctb7kv5x8swfn" path="res://Assets/cooltext471254268381196.png" id="4_758i4"]
+[ext_resource type="Script" path="res://Scenes/line_edit.gd" id="5_d0r4x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jyt20"]
+atlas = ExtResource("3_3qy8e")
+region = Rect2(0, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5n2a"]
+atlas = ExtResource("3_3qy8e")
+region = Rect2(42, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6scfa"]
+atlas = ExtResource("3_3qy8e")
+region = Rect2(84, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_beput"]
+atlas = ExtResource("3_3qy8e")
+region = Rect2(126, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vyx3"]
+atlas = ExtResource("3_3qy8e")
+region = Rect2(168, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdqm6"]
+atlas = ExtResource("3_3qy8e")
+region = Rect2(210, 0, 42, 42)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t11hd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jyt20")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5n2a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6scfa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_beput")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vyx3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdqm6")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -4.0
+offset_top = -9.0
+offset_right = 1175.0
+offset_bottom = 667.0
+color = Color(0.217626, 0.474313, 0.592627, 1)
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 720.0
+offset_top = 349.0
+offset_right = 1046.0
+offset_bottom = 428.0
+theme_override_font_sizes/font_size = 28
+text = "Jugar"
+script = ExtResource("1_g6r8o")
+
+[node name="ButtonSalir" type="Button" parent="Button"]
+layout_mode = 0
+offset_top = 154.0
+offset_right = 326.0
+offset_bottom = 233.0
+theme_override_font_sizes/font_size = 28
+text = "Salir"
+script = ExtResource("2_5kngq")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 133.0
+offset_top = 272.0
+offset_right = 414.0
+offset_bottom = 536.0
+color = Color(0, 0.245764, 0.39018, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(309, 340)
+scale = Vector2(7.69048, 7.45238)
+sprite_frames = SubResource("SpriteFrames_t11hd")
+animation = &"new_animation"
+autoplay = "new_animation"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(579, 151)
+scale = Vector2(1.751, 1.84737)
+texture = ExtResource("4_758i4")
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 568.0
+offset_right = 416.0
+offset_bottom = 599.0
+script = ExtResource("5_d0r4x")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="pressed" from="Button/ButtonSalir" to="Button" method="_on_button_salir_pressed"]

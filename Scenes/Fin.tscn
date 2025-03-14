@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://b87683vcqv601"]
+
+[ext_resource type="Script" path="res://Scripts/button_fin.gd" id="1_k1hoh"]
+[ext_resource type="Texture2D" uid="uid://chbrudpa7i7r8" path="res://Assets/cooltext471254308632550.png" id="2_6ot73"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -10.0
+offset_top = -9.0
+offset_right = 1184.0
+offset_bottom = 746.0
+color = Color(0.215686, 0.47451, 0.592157, 1)
+
+[node name="ButtonFin" type="Button" parent="."]
+layout_mode = 0
+offset_left = 283.0
+offset_top = 509.0
+offset_right = 869.0
+offset_bottom = 603.0
+theme_override_font_sizes/font_size = 40
+text = "Volver al menú"
+script = ExtResource("1_k1hoh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(594, 263)
+scale = Vector2(2.18764, 2.47826)
+texture = ExtResource("2_6ot73")
+
+[connection signal="pressed" from="ButtonFin" to="ButtonFin" method="_on_pressed"]

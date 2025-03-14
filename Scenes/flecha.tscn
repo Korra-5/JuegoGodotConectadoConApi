@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ct7j8vslrvick"]
+
+[ext_resource type="Texture2D" uid="uid://8fetfbw3fm5w" path="res://TitleSet/PNG/Objects/blue_bg_object6.png" id="1_ykvo4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jymg2"]
+size = Vector2(25, 11)
+
+[node name="Flecha" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-44.5, -48)
+scale = Vector2(0.304688, 0.25)
+texture = ExtResource("1_ykvo4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-45, -47)
+shape = SubResource("RectangleShape2D_jymg2")
