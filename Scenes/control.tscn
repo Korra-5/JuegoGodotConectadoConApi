@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/button_salir.gd" id="2_5kngq"]
 [ext_resource type="Texture2D" uid="uid://cjsht1tie27ch" path="res://Assets/3/Walk.png" id="3_3qy8e"]
 [ext_resource type="Texture2D" uid="uid://ctb7kv5x8swfn" path="res://Assets/cooltext471254268381196.png" id="4_758i4"]
-[ext_resource type="Script" path="res://Scenes/line_edit.gd" id="5_d0r4x"]
+[ext_resource type="Script" path="res://Scripts/line_edit.gd" id="5_d0r4x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jyt20"]
 atlas = ExtResource("3_3qy8e")
@@ -64,10 +64,10 @@ offset_bottom = 40.0
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = -4.0
-offset_top = -9.0
-offset_right = 1175.0
-offset_bottom = 667.0
+offset_left = -15.0
+offset_top = 9.0
+offset_right = 1164.0
+offset_bottom = 685.0
 color = Color(0.217626, 0.474313, 0.592627, 1)
 
 [node name="Button" type="Button" parent="."]
@@ -80,25 +80,16 @@ theme_override_font_sizes/font_size = 28
 text = "Jugar"
 script = ExtResource("1_g6r8o")
 
-[node name="ButtonSalir" type="Button" parent="Button"]
-layout_mode = 0
-offset_top = 154.0
-offset_right = 326.0
-offset_bottom = 233.0
-theme_override_font_sizes/font_size = 28
-text = "Salir"
-script = ExtResource("2_5kngq")
-
 [node name="ColorRect2" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 133.0
-offset_top = 272.0
-offset_right = 414.0
-offset_bottom = 536.0
+offset_left = 109.0
+offset_top = 251.0
+offset_right = 390.0
+offset_bottom = 515.0
 color = Color(0, 0.245764, 0.39018, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(309, 340)
+position = Vector2(281, 325)
 scale = Vector2(7.69048, 7.45238)
 sprite_frames = SubResource("SpriteFrames_t11hd")
 animation = &"new_animation"
@@ -111,11 +102,30 @@ texture = ExtResource("4_758i4")
 
 [node name="LineEdit" type="LineEdit" parent="."]
 layout_mode = 0
-offset_left = 131.0
-offset_top = 568.0
-offset_right = 416.0
-offset_bottom = 599.0
+offset_left = 108.0
+offset_top = 562.0
+offset_right = 390.0
+offset_bottom = 605.0
 script = ExtResource("5_d0r4x")
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 528.0
+offset_right = 413.0
+offset_bottom = 567.0
+theme_override_font_sizes/font_size = 20
+text = "Inserte nombre del aventurero:"
+
+[node name="ButtonSalir" type="Button" parent="."]
+layout_mode = 0
+offset_left = 720.0
+offset_top = 503.0
+offset_right = 1046.0
+offset_bottom = 582.0
+theme_override_font_sizes/font_size = 28
+text = "Salir"
+script = ExtResource("2_5kngq")
+
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
-[connection signal="pressed" from="Button/ButtonSalir" to="Button" method="_on_button_salir_pressed"]
+[connection signal="pressed" from="ButtonSalir" to="Button" method="_on_button_salir_pressed"]

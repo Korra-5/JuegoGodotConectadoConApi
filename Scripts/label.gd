@@ -36,3 +36,8 @@ func _on_timer_timeout():
 
 func update_global_time():
 	Global.tiempo_jugador = tiempo_jugador
+
+func stop_timer():
+	if timer:
+		timer.stop()
+		print("Timer stopped at: ", tiempo_jugador)

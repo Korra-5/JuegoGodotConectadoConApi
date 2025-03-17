@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Scripts/button_fin.gd" id="1_k1hoh"]
 [ext_resource type="Texture2D" uid="uid://chbrudpa7i7r8" path="res://Assets/cooltext471254308632550.png" id="2_6ot73"]
-[ext_resource type="Script" path="res://Scenes/label_1.gd" id="3_pivfm"]
-[ext_resource type="Script" path="res://Scenes/label_2.gd" id="4_1hinq"]
+[ext_resource type="Script" path="res://Scripts/label_1.gd" id="3_pivfm"]
+[ext_resource type="Script" path="res://Scripts/label_2.gd" id="4_1hinq"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -43,6 +43,7 @@ offset_bottom = 645.0
 script = ExtResource("3_pivfm")
 
 [node name="Label2" type="Label" parent="."]
+layout_mode = 0
 offset_left = 836.0
 offset_top = 350.0
 offset_right = 1127.0
